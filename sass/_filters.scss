@@ -1,0 +1,25 @@
+ @use 'variables' as var;
+
+
+ .grid-container{
+   display: grid;
+   grid-template-columns: 100%;
+   grid-template-areas: 
+   "aside" 
+   "section";
+
+
+   @media (min-width: 768px){
+       grid-template-columns: 20% 80%;
+       grid-template-areas: 
+       "aside section";
+   }
+ }
+ .filters{
+    border: 5px solid green;
+    color: white;
+    &__list{
+      text-decoration: none;
+      list-style: none;
+    }
+ }

@@ -1,0 +1,33 @@
+@mixin responsive-background{
+    @media (min-width: 1200px){
+        width: 1140px;
+    }
+    @media (min-width: 992px) and (max-width: 1200px){
+        width: 960px;
+    }
+    @media (min-width: 768px) and (max-width: 992px){
+        width: 720px;
+    }
+    @media (min-width: 370px) and (max-width: 768px){
+        width: 370px;
+    }
+    @media (max-width: 370px){
+        width: 300px;
+    }
+
+}
+
+@mixin responsive-grid{
+    @media (min-width: 1200px){
+        grid-template-columns: repeat(auto-fill,minmax(200px,270px));
+    }
+    @media (min-width: 992px) and (max-width: 1200px){
+        grid-template-columns: repeat(auto-fill,minmax(200px,220px));
+    }
+    @media (min-width: 768px) and (max-width: 992px){
+        grid-template-columns: repeat(auto-fill,minmax(200px,250px));
+    }
+    @media (max-width: 768px){
+        grid-template-columns: repeat(auto-fill,minmax(200px,350px));
+    }
+}

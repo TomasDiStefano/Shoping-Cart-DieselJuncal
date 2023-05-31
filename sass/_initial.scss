@@ -1,0 +1,40 @@
+@import 'mixins';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-container{
+    width: 100%;
+}
+
+body{
+   background-image: url(../images/images.jpg);
+   background-repeat: repeat;
+   background-position: center;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    &__title{
+        margin-top: 105px;
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: center;
+        color: black;
+    }
+    &__background{
+        background-color: rgb(75, 75, 75);
+        opacity: 0.9;
+        border-radius: 30px;
+        height: auto;
+        @include responsive-background; 
+        
+    }    
+
+}

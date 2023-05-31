@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-container {
+  width: 100%;
+}
+
+body {
+  background-image: url(../images/images.jpg);
+  background-repeat: repeat;
+  background-position: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content__title {
+  margin-top: 105px;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+  color: black;
+}
+.content__background {
+  background-color: rgb(75, 75, 75);
+  opacity: 0.9;
+  border-radius: 30px;
+  height: auto;
+}
+@media (min-width: 1200px) {
+  .content__background {
+    width: 1140px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .content__background {
+    width: 960px;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .content__background {
+    width: 720px;
+  }
+}
+@media (min-width: 370px) and (max-width: 768px) {
+  .content__background {
+    width: 370px;
+  }
+}
+@media (max-width: 370px) {
+  .content__background {
+    width: 300px;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  height: 95px;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (min-width: 1200px) {
+  .items {
+    width: 1140px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .items {
+    width: 960px;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .items {
+    width: 720px;
+  }
+}
+@media (min-width: 370px) and (max-width: 768px) {
+  .items {
+    width: 370px;
+  }
+}
+@media (max-width: 370px) {
+  .items {
+    width: 300px;
+  }
+}
+.items__logo {
+  height: 85px;
+}
+.items__cart {
+  position: relative;
+}
+.items__cart:hover {
+  cursor: pointer;
+}
+.items__cart--notification {
+  position: absolute;
+  font-weight: 700;
+  background-color: rgb(255, 54, 54);
+  width: 15px;
+  border-radius: 4px;
+  border: 1px solid grey;
+  top: -5px;
+  left: 30px;
+  text-align: center;
+}
+.items__cart--img {
+  height: 40px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-areas: "aside" "section";
+}
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: 20% 80%;
+    grid-template-areas: "aside section";
+  }
+}
+
+.filters {
+  border: 5px solid green;
+  color: white;
+}
+.filters__list {
+  text-decoration: none;
+  list-style: none;
+}
+
+.products {
+  width: auto;
+}
+.products__grid-container {
+  border: 2px solid white;
+  display: grid;
+  grid-auto-rows: 340px;
+  gap: 20px;
+  padding: 20px;
+  justify-content: space-between;
+}
+@media (min-width: 1200px) {
+  .products__grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 270px));
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .products__grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 220px));
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .products__grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 250px));
+  }
+}
+@media (max-width: 768px) {
+  .products__grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 350px));
+  }
+}
+.products__grid-item {
+  border: 1px solid red;
+}
+
+.form {
+  margin-top: 105px;
+  margin-bottom: 10px;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+}
+@media (min-width: 1200px) {
+  .form {
+    width: 1140px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .form {
+    width: 960px;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .form {
+    width: 720px;
+  }
+}
+@media (min-width: 370px) and (max-width: 768px) {
+  .form {
+    width: 370px;
+  }
+}
+@media (max-width: 370px) {
+  .form {
+    width: 300px;
+  }
+}
+.form__placeholder {
+  border: 1px solid white;
+  border-radius: 8px;
+  height: auto;
+  width: 100%;
+  padding: 10px;
+  margin-right: 10px;
+  outline: white;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.9s ease-in-out;
+}
+.form__placeholder:focus {
+  border-color: red;
+  box-shadow: 30px black;
+}
+.form__button {
+  background-color: transparent; /* Green */
+  opacity: 1;
+  border-radius: 8px;
+  border: 1px solid rgb(255, 0, 0);
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 750;
+  transition: background-color 0.5s;
+}
+.form__button:hover {
+  cursor: pointer;
+  background-color: red;
+}
+
+/*# sourceMappingURL=styles.css.map */
