@@ -29,8 +29,7 @@ body{
         color: black;
     }
     &__background{
-        background-color: rgb(75, 75, 75);
-        opacity: 0.9;
+        background-color: rgba(75, 75, 75, 0.685);
         border-radius: 30px;
         height: auto;
         @include responsive-background; 

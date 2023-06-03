@@ -6,7 +6,7 @@
         width: 960px;
     }
     @media (min-width: 768px) and (max-width: 992px){
-        width: 720px;
+        width: 800px;
     }
     @media (min-width: 370px) and (max-width: 768px){
         width: 370px;
@@ -28,6 +28,23 @@
         grid-template-columns: repeat(auto-fill,minmax(200px,250px));
     }
     @media (max-width: 768px){
-        grid-template-columns: repeat(auto-fill,minmax(200px,350px));
+        grid-template-columns: repeat(auto-fill,minmax(200px,250px));
+    }
+}
+
+@mixin button-template {
+    background-color: red; /* Green */
+    border-radius: 8px;
+    border: 1.5px solid black;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    font-family: "kulim-park", sans-serif;
+    font-size: 15px;
+    font-weight: 750;
+    transition: color 0.5s;
+    &:hover{
+        cursor: pointer;
+        color: black;
     }
 }

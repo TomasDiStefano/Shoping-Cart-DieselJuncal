@@ -27,8 +27,7 @@ body {
   color: black;
 }
 .content__background {
-  background-color: rgb(75, 75, 75);
-  opacity: 0.9;
+  background-color: rgba(75, 75, 75, 0.685);
   border-radius: 30px;
   height: auto;
 }
@@ -44,7 +43,7 @@ body {
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .content__background {
-    width: 720px;
+    width: 800px;
   }
 }
 @media (min-width: 370px) and (max-width: 768px) {
@@ -87,7 +86,7 @@ body {
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .items {
-    width: 720px;
+    width: 800px;
   }
 }
 @media (min-width: 370px) and (max-width: 768px) {
@@ -125,7 +124,6 @@ body {
 }
 
 .grid-container {
-  padding: 10px;
   padding-top: 0px;
   display: grid;
   grid-template-columns: 100%;
@@ -148,7 +146,12 @@ body {
   }
 }
 .filters__form {
-  padding-top: 10px;
+  padding: 25px;
+}
+.filters__form--items {
+  padding: 2.5px;
+  font-weight: 200;
+  font-size: 20px;
 }
 .filters__button {
   background-color: red; /* Green */
@@ -163,7 +166,7 @@ body {
   transition: color 0.5s;
 }
 .filters__button--container {
-  padding: 5px;
+  padding: 10px;
   display: flex;
   justify-content: center;
 }
@@ -182,7 +185,7 @@ body {
 }
 .title__beautify {
   font-family: "roboto", sans-serif;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .products {
@@ -193,7 +196,7 @@ body {
   grid-auto-rows: 340px;
   gap: 20px;
   padding: 20px;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 @media (min-width: 1200px) {
   .products__grid-container {
@@ -212,11 +215,49 @@ body {
 }
 @media (max-width: 768px) {
   .products__grid-container {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 350px));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 250px));
   }
 }
 .products__grid-item {
-  border: 1px solid red;
+  padding: 10px 5px;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.705);
+  border-radius: 10px;
+}
+.products__grid-item p {
+  font-family: "reboto", sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+.products__grid-item--img {
+  height: 75%;
+  width: 100%;
+}
+.products__grid-item--price {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.products__grid-item--price button {
+  background-color: red; /* Green */
+  border-radius: 8px;
+  border: 1.5px solid black;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  font-family: "kulim-park", sans-serif;
+  font-size: 15px;
+  font-weight: 750;
+  transition: color 0.5s;
+}
+.products__grid-item--price button:hover {
+  cursor: pointer;
+  color: black;
 }
 
 .form {
@@ -238,7 +279,7 @@ body {
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .form {
-    width: 720px;
+    width: 800px;
   }
 }
 @media (min-width: 370px) and (max-width: 768px) {
