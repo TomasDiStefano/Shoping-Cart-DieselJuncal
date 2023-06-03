@@ -125,6 +125,8 @@ body {
 }
 
 .grid-container {
+  padding: 10px;
+  padding-top: 0px;
   display: grid;
   grid-template-columns: 100%;
   grid-template-areas: "aside" "section";
@@ -136,12 +138,38 @@ body {
   }
 }
 
-.filters {
+.filters__container {
+  border-right: 1px solid white;
   color: white;
 }
-.filters__list {
-  text-decoration: none;
-  list-style: none;
+@media (max-width: 768px) {
+  .filters__container {
+    border: none;
+  }
+}
+.filters__form {
+  padding-top: 10px;
+}
+.filters__button {
+  background-color: red; /* Green */
+  border-radius: 8px;
+  border: 1.5px solid black;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  font-family: "kulim-park", sans-serif;
+  font-size: 15px;
+  font-weight: 750;
+  transition: color 0.5s;
+}
+.filters__button--container {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+}
+.filters__button:hover {
+  cursor: pointer;
+  color: black;
 }
 
 .title {
