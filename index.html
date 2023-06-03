@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diesel Juncal</title>
     <link rel="stylesheet" href="styles.css">
+
+    <!-- GOOGLE FONT ROBOTO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kulim+Park:ital,wght@1,300&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    
 </head>
 <body>
     <main class="main-container">
@@ -31,14 +37,27 @@
                 <button class="form__button">Buscar</button>
             </form>
             <section class="content__background">
-                
+                <div class="title">
+                    <h1 class="title__beautify">Productos Destacados</h1>
+                </div>
+
                 <div class="grid-container">
                     <aside class="filters"> 
-                        <ul class="filters__list">
+                        <form action="">
+                            <div class="">
+                                <input name="identificador" type="radio" value="Inyectores" id="Inyectores">
+                                <label for="Inyectores"> Inyectores</label>
+                            </div>
+                            <div class="">
+                                <input name="identificador" type="radio" value="Bombas" id="Bombas">
+                                <label for="Bombas"> Bombas</label>
+                            </div>
+                        </form>
+                        <!-- <ul class="filters__list">
                             <li class="filters__list--item">Inyectores</li>
                             <li class="filters__list--item">Bombas</li>
                             <li class="filters__list--item">Sensores</li>
-                        </ul>
+                        </ul> -->
                     </aside>
                     
                     <section class="products">
