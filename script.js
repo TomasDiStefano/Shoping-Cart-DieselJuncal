@@ -1,9 +1,9 @@
 
 let producto;
-let cantidadCuotas;
 let precioTotal = 0;
 let totalEnCuotas = 0;
 let cuotaActual = 0;
+let cantidadCuotas;
 
 ingresarProducto();
 
@@ -13,21 +13,34 @@ function ingresarProducto(){
 }
 
 function selectorCuotas () {
+    
     switch (producto) {
         case '1':
             cantidadCuotas = prompt('El precio de su inyector en 1 pago es de $125.354, eliga la cantidad de cuotas: ');
             precioTotal = 125354; 
-            calcularPago()
+            if(parseInt(cantidadCuotas)>0){
+                calcularPago()
+            } else {
+                ingresarProducto();
+            }
             break;
         case '2':
             cantidadCuotas = prompt('El precio de su bomba en 1 pago es de $540.350, eliga la cantidad de cuotas: ');
             precioTotal = 540350;
-            calcularPago()
+            if(parseInt(cantidadCuotas)>0){
+                calcularPago()
+            } else {
+                ingresarProducto();
+            }
             break
         case '3':
             cantidadCuotas = prompt('El precio de su Sensor en 1 pago es de $35.690, eliga la cantidad de cuotas: ');
             precioTotal = 35690;
-            calcularPago()
+            if(parseInt(cantidadCuotas)>0){
+                calcularPago()
+            } else {
+                ingresarProducto();
+            }
             break;
         default:
             ingresarProducto();
