@@ -6,12 +6,12 @@
         width: 960px;
     }
     @media (min-width: 768px) and (max-width: 992px){
-        width: 800px;
+        width: 760px;
     }
-    @media (min-width: 370px) and (max-width: 768px){
-        width: 370px;
+    @media (min-width: 390px) and (max-width: 768px){
+        width: 390px;
     }
-    @media (max-width: 370px){
+    @media (max-width: 390px){
         width: 300px;
     }
 
@@ -46,5 +46,10 @@
     &:hover{
         cursor: pointer;
         color: black;
+    }
+}
+@mixin responsive-cart-modal{
+    @media (max-width: 390px){
+        width: 300px;
     }
 }
