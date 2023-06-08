@@ -408,12 +408,18 @@ body {
   font-size: 15px;
   font-weight: 750;
   transition: color 0.5s;
+  color: black;
   font-size: 13px;
   padding: 7px 10px;
+  transition: color 0.5s;
 }
 .cart-modal__buy-button:hover {
   cursor: pointer;
   color: black;
+}
+.cart-modal__buy-button:hover {
+  cursor: pointer;
+  color: white;
 }
 
 /*# sourceMappingURL=styles.css.map */

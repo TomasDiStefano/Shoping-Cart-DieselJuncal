@@ -75,7 +75,13 @@
     }
     &__buy-button{
         @include button-template;
+        color: black;
         font-size: 13px; 
         padding: 7px 10px;
+        transition: color 0.5s;
+        &:hover{
+            cursor: pointer;
+            color: white;
+        }
     }
 }
