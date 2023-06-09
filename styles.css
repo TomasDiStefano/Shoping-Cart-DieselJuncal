@@ -422,4 +422,8 @@ body {
   color: white;
 }
 
+.hidden-cart {
+  display: none;
+}
+
 /*# sourceMappingURL=styles.css.map */

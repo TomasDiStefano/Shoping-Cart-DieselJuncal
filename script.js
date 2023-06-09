@@ -1,4 +1,83 @@
+const cartBtn = document.querySelector('.items__cart');
+const cartModalContainer = document.querySelector('.cart-modal');
 
+cartBtn.addEventListener('click', () => {
+    cartModalContainer.classList.toggle('hidden-cart');
+})
+
+// RENDER PRODUCTS LIST
+
+const productItem = document.querySelector('.products__grid-container');
+
+function renderProducts(){
+    products.forEach((product) => {
+        productItem.innerHTML += `
+            <div class="products__grid-item"> 
+                <p> ${product.type} ${product.specification}</p> 
+                <img class="products__grid-item--img" src="${product.img}"> 
+                <div class="products__grid-item--price"> 
+                    <button onclick="addToCart(${product.id})">Agregar</button> 
+                    <p> $ ${product.price}</p> 
+                </div> 
+            </div>`                    
+        });
+}
+
+renderProducts();
+
+// Cart Array
+let cart = [];
+
+function addToCart(id) {
+
+    products[id].qty += 1;
+
+    const item = products.find((product) => product.id === id);
+
+    if(cart.some(item => item.id === id)){
+        'Ya existe en el carrito'
+    } else {
+        cart.push(item);
+        console.log('entro al else');
+    }
+    
+    updateCart();
+    console.log(cart);
+}
+
+// UPDATE CART
+
+function updateCart() {
+    renderCartItems();
+    //renderSubtotal();
+}
+
+// RENDER CART ITEMS
+const cartItem = document.querySelector('.cart-modal__container');
+
+function renderCartItems() {
+    cartItem.innerHTML = ` `
+    cart.forEach((item) => {
+        let totalPerItem = item.qty*item.price;
+        cartItem.innerHTML += `
+            <div class="cart-modal__details-container">
+                <img src="${item.img}" class="cart-modal__img" alt="">
+                <div class="cart-modal__product-description">
+                    <p class="cart-modal__product">${item.type} ${item.specification}</p>
+                    <p class="cart-modal__price">$ ${item.price} x${item.qty} <span>$${totalPerItem}</span></p>
+                </div>
+                <img class="cart-modal__discard-bin" src="./images/contenedor-de-basura.png" alt="">
+            </div>
+        `
+    })
+}
+
+
+
+
+
+
+/*
 let producto;
 let precioTotal = 0;
 let totalEnCuotas = 0;
@@ -53,3 +132,6 @@ function calcularPago(){
     console.log('El total a abonar en cuotas será de: ', totalEnCuotas.toFixed(2), 'en 1 cuota sería de:', precioTotal.toFixed(2));
     console.log('Realizando el pago en 1 cuota se ahorraría:', (totalEnCuotas - precioTotal).toFixed(2))
 }
+ 
+
+*/
