@@ -109,6 +109,7 @@ body {
   cursor: pointer;
 }
 .items__cart--notification {
+  display: none;
   position: absolute;
   font-weight: 700;
   background-color: rgb(255, 54, 54);
@@ -336,6 +337,8 @@ body {
   top: 98px;
   right: 3px;
   border-radius: 10px;
+  border: 1px solid red;
+  box-shadow: 3px;
 }
 @media (max-width: 390px) {
   .cart-modal {
@@ -441,6 +444,12 @@ body {
   color: red;
   border-radius: 50%;
   cursor: pointer;
+}
+.cart-modal__empty {
+  padding: 50px;
+  border: none;
+  text-align: center;
+  height: 80%;
 }
 
 .hidden-cart {

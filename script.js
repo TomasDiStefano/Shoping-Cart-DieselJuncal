@@ -26,7 +26,18 @@ function renderProducts(){
 renderProducts();
 
 // Cart Array
+const cartItemQtyIndicator = document.getElementById("cart-notification");
 let cart = [];
+
+function updateCartQtyIndicator() {
+    cartItemQtyIndicator.style.display = "block";
+    cartItemQtyIndicator.innerText = cart.length;
+
+    if(cart.length == 0 ){
+        cartItemQtyIndicator.style.display = "none";
+        console.log('stilos',);
+    }
+}
 
 function addToCart(id) {
 
@@ -39,6 +50,7 @@ function addToCart(id) {
     }
     
     updateCart();
+    updateCartQtyIndicator();
 }
 
 // UPDATE CART
@@ -53,25 +65,29 @@ const cartItem = document.querySelector('.cart-modal__container');
 
 function renderCartItems() {
     cartItem.innerHTML = ` `
-    cart.forEach((item) => {
-        let totalPerItem = item.qty*item.price;
-        cartItem.innerHTML += `
-            <div class="cart-modal__details-container">
-                <img src="${item.img}" class="cart-modal__img" alt="">
-                <div class="cart-modal__product-description">
-                    <p class="cart-modal__product">${item.type} ${item.specification}</p>
-                    <p class="cart-modal__price">$ ${item.price} x${item.qty} <span>$${totalPerItem}</span></p>
-                    <div class="cart-modal__qty-container">
-                        <div class="cart-modal__qty-btn" onclick="changeItemQty('minus',${item.id})">-</div>
-                        <div class="cart-modal__product--qty">${item.qty}</div>
-                        <div class="cart-modal__qty-btn" onclick="changeItemQty('plus',${item.id})">+</div>  
+    if(cart.length == 0) {
+        cartItem.innerHTML += `<p class="cart-modal__empty empty-hidden"> El carrito esta vacío</p>`
+    } else {
+        cart.forEach((item) => {
+            let totalPerItem = item.qty*item.price;
+            cartItem.innerHTML += `
+                <div class="cart-modal__details-container">
+                    <img src="${item.img}" class="cart-modal__img" alt="">
+                    <div class="cart-modal__product-description">
+                        <p class="cart-modal__product">${item.type} ${item.specification}</p>
+                        <p class="cart-modal__price">$ ${item.price} x${item.qty} <span>$${totalPerItem}</span></p>
+                        <div class="cart-modal__qty-container">
+                            <div class="cart-modal__qty-btn" onclick="changeItemQty('minus',${item.id})">-</div>
+                            <div class="cart-modal__product--qty">${item.qty}</div>
+                            <div class="cart-modal__qty-btn" onclick="changeItemQty('plus',${item.id})">+</div>  
+                        </div>
                     </div>
+                    <img class="cart-modal__discard-bin" src="./images/contenedor-de-basura.png" alt="" onclick="deleteItem(${item.id})">
+                    
                 </div>
-                <img class="cart-modal__discard-bin" src="./images/contenedor-de-basura.png" alt="">
-                
-            </div>
-        `
-    })
+            `
+        })
+    }
 }
 
 // ADD FUNCTIONALITY FOR PLUS AND MINUS BTN
@@ -89,12 +105,38 @@ function changeItemQty(operation, id) {
     updateCart();
 }
 
+// ADD FUNCTIONALITY DELETE BUTTON
+
+function deleteItem (id) {
+    console.log('delete',(id));
+    cart = cart.filter(function( item ) {
+        return item.id !== id;
+    });
+    updateCart();
+    updateCartQtyIndicator();
+}
+
 // RENDER SUBTOTAL
 
-const cartSubtotal = document.querySelector('.cart-modal__container');
+const cartSubtotal = document.querySelector('.cart-modal__buy-container');
 
 function renderSubtotal() {
+    let subtotal = 0;
+    cart.forEach((item) => {
+        subtotal += item.qty * item.price;
+    })
 
+    if(subtotal == 0) {
+        cartSubtotal.innerHTML = `
+            <p class="cart-modal__total-price"><span>Total: </span>$ ${subtotal}</p>
+        `;
+    } else {
+        cartSubtotal.innerHTML = `
+            <p class="cart-modal__total-price"><span>Total: </span>$ ${subtotal}</p>
+            <button class="cart-modal__buy-button"> Finalizar compra</button>
+        `;
+    }
+    
 }
 
 

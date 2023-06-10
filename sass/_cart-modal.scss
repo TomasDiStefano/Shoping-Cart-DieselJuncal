@@ -13,6 +13,8 @@
     top: 98px;
     right: 3px;
     border-radius: 10px;
+    border: 1px solid red;
+    box-shadow: 3px;
     @include responsive-cart-modal;
     &__title{
         padding: 10px; 
@@ -104,6 +106,12 @@
         color: red;
         border-radius: 50%;
         cursor: pointer;
+    }
+    &__empty{
+        padding: 50px;
+        border: none;
+        text-align: center;
+        height: 80%;
     }
 }
 

@@ -32,6 +32,7 @@
         }
 
         &--notification{
+            display: none;
             position: absolute;
             font-weight: 700;
             background-color: rgb(255, 54, 54);
