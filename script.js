@@ -30,26 +30,22 @@ let cart = [];
 
 function addToCart(id) {
 
-    products[id].qty += 1;
-
     const item = products.find((product) => product.id === id);
 
     if(cart.some(item => item.id === id)){
-        'Ya existe en el carrito'
+        alert('Ya existe en el carrito');
     } else {
-        cart.push(item);
-        console.log('entro al else');
+        cart.push({...item, qty: 1});
     }
     
     updateCart();
-    console.log(cart);
 }
 
 // UPDATE CART
 
 function updateCart() {
     renderCartItems();
-    //renderSubtotal();
+    renderSubtotal();
 }
 
 // RENDER CART ITEMS
@@ -65,15 +61,41 @@ function renderCartItems() {
                 <div class="cart-modal__product-description">
                     <p class="cart-modal__product">${item.type} ${item.specification}</p>
                     <p class="cart-modal__price">$ ${item.price} x${item.qty} <span>$${totalPerItem}</span></p>
+                    <div class="cart-modal__qty-container">
+                        <div class="cart-modal__qty-btn" onclick="changeItemQty('minus',${item.id})">-</div>
+                        <div class="cart-modal__product--qty">${item.qty}</div>
+                        <div class="cart-modal__qty-btn" onclick="changeItemQty('plus',${item.id})">+</div>  
+                    </div>
                 </div>
                 <img class="cart-modal__discard-bin" src="./images/contenedor-de-basura.png" alt="">
+                
             </div>
         `
     })
 }
 
+// ADD FUNCTIONALITY FOR PLUS AND MINUS BTN
+function changeItemQty(operation, id) {
+    cart = cart.map ((item) => {
+        if(item.id === id) {
+            if(operation === 'minus' & item.qty >1 ) {
+                item.qty--;
+            } else if (operation === 'plus'){
+                item.qty++;
+            }
+        }
+        return item;
+    })
+    updateCart();
+}
 
+// RENDER SUBTOTAL
 
+const cartSubtotal = document.querySelector('.cart-modal__container');
+
+function renderSubtotal() {
+
+}
 
 
 

@@ -84,6 +84,27 @@
             color: white;
         }
     }
+    &__product--qty{
+        padding: 0 5px 0 5px;
+        font-weight: 700;
+    }
+    &__qty-container{
+        font-size: 13px; 
+        border-radius: 20px;
+        padding-top: 6px;
+        padding-bottom: 3px;
+        display: flex;
+        justify-content: center;
+    }
+    &__qty-btn{
+        width: 15px;
+        height: 15px;   
+        text-align: center;
+        background-color: white;
+        color: red;
+        border-radius: 50%;
+        cursor: pointer;
+    }
 }
 
 .hidden-cart {
