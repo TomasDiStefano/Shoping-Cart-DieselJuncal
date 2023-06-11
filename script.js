@@ -9,8 +9,9 @@ cartBtn.addEventListener('click', () => {
 
 const productItem = document.querySelector('.products__grid-container');
 
-function renderProducts(){
-    products.forEach((product) => {
+function renderProducts(arrayToRender){
+    productItem.innerHTML = ``;
+    arrayToRender.forEach((product) => {
         productItem.innerHTML += `
             <div class="products__grid-item"> 
                 <p> ${product.type} ${product.specification}</p> 
@@ -23,7 +24,7 @@ function renderProducts(){
         });
 }
 
-renderProducts();
+renderProducts(products);
 
 // Cart Array
 const cartItemQtyIndicator = document.getElementById("cart-notification");
@@ -133,12 +134,45 @@ function renderSubtotal() {
     } else {
         cartSubtotal.innerHTML = `
             <p class="cart-modal__total-price"><span>Total: </span>$ ${subtotal}</p>
-            <button class="cart-modal__buy-button"> Finalizar compra</button>
+            <button class="cart-modal__buy-button"> Finalizar compra </button>
         `;
     }
-    
 }
 
+// ------------------------------------------- START FILTERS---------------------------------------------
+let filteredProducts = [];
+
+// Get the form and input element
+const filterForm = document.getElementById('filterForm');
+const formInput = document.getElementById('filterByNameInput');
+
+// Function to filter array by Input
+function filterByInput(value) {
+    value = (value.toLowerCase()).replace(/ /g,''); // Quito los espacios en blanco y las mayusculas
+    filteredProducts = products.filter(function( item ) {
+        let typeConditionClean = ((item.type).toLowerCase()).replace(/ /g,'') //without spaces and upper
+        let specificationConditionClean = ((item.specification).toLowerCase()).replace(/ /g,'') //without spaces and upper
+        let bothCondition = typeConditionClean + specificationConditionClean;
+        if(value == '') {
+            return products;
+        } else if (bothCondition.includes(value)) {
+            return item
+        };
+    });
+    renderProducts(filteredProducts);
+}
+
+
+filterForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+  
+    // Get the entered property value
+    const userInput = formInput.value;
+
+    console.log('ingresado',userInput);
+    // Filter the array based on the entered property
+    filterByInput(userInput);
+});
 
 
 /*

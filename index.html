@@ -21,8 +21,10 @@
         <header class="header">
 
             <div class="items">
-                <img class="items__logo" src="./images/img-logo.png" alt="logo">
-            
+                <a href="./">
+                    <img class="items__logo" src="./images/img-logo.png" href="./index.html" alt="logo">
+                </a>
+                
                 <!-- header__cart-avatar-->
                 <div>
                     <div class="items__cart">
@@ -50,9 +52,9 @@
         </div>
 
         <section class="content">
-            <form class="form" action="">
-                <input class="form__placeholder" type="text" name="" id="">
-                <button class="form__button">Buscar</button>
+            <form class="form" id="filterForm" action="">
+                <input class="form__placeholder" placeholder="Filtrar por tipo o numeración" type="text" name="" id="filterByNameInput">
+                <button class="form__button" id="submitBuscar" type="submit">Buscar</button>
             </form>
             <section class="content__background">
                 <div class="title">

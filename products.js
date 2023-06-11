@@ -33,7 +33,7 @@ const products =
 }, {
     id: 5,
     type: 'Inyector',
-    specification: '9709500-8292',
+    specification: '97095008292',
     price: 189211,
     img: './images/Inyectores/Inyector Toyota.png',
 }, {
