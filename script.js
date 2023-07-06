@@ -24,11 +24,12 @@ function renderProducts(arrayToRender){
         });
 }
 
-renderProducts(products);
 
 // Cart Array
 const cartItemQtyIndicator = document.getElementById("cart-notification");
-let cart = [];
+let cart = localStorage.cartJSON ? JSON.parse(localStorage.cartJSON) : [];
+
+console.log("CART", cart);
 
 function updateCartQtyIndicator() {
     cartItemQtyIndicator.style.display = "block";
@@ -52,13 +53,22 @@ function addToCart(id) {
     
     updateCart();
     updateCartQtyIndicator();
+    updateCartStorage();
 }
 
 // UPDATE CART
 
 function updateCart() {
     renderCartItems();
+    updateCartQtyIndicator();
     renderSubtotal();
+}
+
+// UPDATE LOCALSTORAGE 
+
+function updateCartStorage() {
+    localStorage.clear();
+    localStorage.setItem("cartJSON", JSON.stringify(cart));
 }
 
 // RENDER CART ITEMS
@@ -104,6 +114,7 @@ function changeItemQty(operation, id) {
         return item;
     })
     updateCart();
+    updateCartStorage();
 }
 
 // ADD FUNCTIONALITY DELETE BUTTON
@@ -115,6 +126,7 @@ function deleteItem (id) {
     });
     updateCart();
     updateCartQtyIndicator();
+    updateCartStorage();
 }
 
 // RENDER SUBTOTAL
@@ -162,7 +174,6 @@ function filterByInput(value) {
     renderProducts(filteredProducts);
 }
 
-
 filterForm.addEventListener('submit', (event) => {
     event.preventDefault();
   
@@ -173,6 +184,9 @@ filterForm.addEventListener('submit', (event) => {
     // Filter the array based on the entered property
     filterByInput(userInput);
 });
+
+updateCart();
+renderProducts(products);
 
 
 /*
