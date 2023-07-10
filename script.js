@@ -29,8 +29,6 @@ function renderProducts(arrayToRender){
 const cartItemQtyIndicator = document.getElementById("cart-notification");
 let cart = localStorage.cartJSON ? JSON.parse(localStorage.cartJSON) : [];
 
-console.log("CART", cart);
-
 function updateCartQtyIndicator() {
     cartItemQtyIndicator.style.display = "block";
     cartItemQtyIndicator.innerText = cart.length;
@@ -125,8 +123,15 @@ function deleteItem (id) {
         return item.id !== id;
     });
     updateCart();
-    updateCartQtyIndicator();
     updateCartStorage();
+}
+
+// END PURCHASE BUTTON
+
+function endPurchase() {
+    cart = [];
+    updateCart();
+    localStorage.clear();
 }
 
 // RENDER SUBTOTAL
@@ -146,7 +151,7 @@ function renderSubtotal() {
     } else {
         cartSubtotal.innerHTML = `
             <p class="cart-modal__total-price"><span>Total: </span>$ ${subtotal}</p>
-            <button class="cart-modal__buy-button"> Finalizar compra </button>
+            <button  onclick="endPurchase()" class="cart-modal__buy-button"> Finalizar compra </button>
         `;
     }
 }
