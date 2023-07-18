@@ -16,9 +16,29 @@ function addToCart(id) {
     const item = products.find((product) => product.id === id);
 
     if(cart.some(item => item.id === id)){
-        alert('Ya existe en el carrito');
+        Toastify({
+            text: "El producto ya se encuentra en el carrito !",
+            duration: 3000,
+            close: false,
+            gravity: 'bottom',
+            position: 'right',
+            backgroundColor: 'red'
+        }).showToast();
+    
     } else {
         cart.push({...item, qty: 1});
+
+        let producAdded= item.type + ' ' + item.specification;
+
+        Toastify({
+            text: 'Se agregó el producto: ' + producAdded,
+            duration: 3000,
+            close: false,
+            gravity: 'bottom',
+            position: 'right',
+            backgroundColor: 'green'
+        }).showToast();
+
     }
     
     updateCart();
@@ -105,11 +125,40 @@ function deleteItem (id) {
     cart = cart.filter(function( item ) {
         return item.id !== id;
     });
+
+    Toastify({
+        text: "Producto eliminado del carrito",
+        duration: 3000,
+        close: false,
+        gravity: 'bottom',
+        position: 'left',
+        backgroundColor: 'red'
+    }).showToast();
+
     updateCart();
 }
 
 function endPurchase() {
-    cart = [];
-    updateCart();
-    localStorage.clear();
+
+    swal({
+        text: "¿Seguro que desea efectuar la compra?",
+        icon: "warning",
+        buttons: ["Cancelar", "Comprar"],
+        dangerMode: false,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+            cart = [];
+            updateCart();
+            localStorage.clear();
+            swal("La compra se ha efectuado con éxito", {
+                icon: "success",
+            });
+        } else {
+           swal("La compra no ha finalizado aún");
+        }
+      });
+    
+    
+
 }

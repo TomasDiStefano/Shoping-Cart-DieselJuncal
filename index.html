@@ -15,6 +15,9 @@
     <!-- Icon -->
     <link rel="shortcut icon" href="./images/img-logo.png" />
 
+    <!-- Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
 </head>
 <body>
     <main class="main-container">
@@ -71,17 +74,14 @@
                             </div>
                             <div class="filters__form--items">
                                 <input name="identificador" type="radio" value="Bombas" id="Bombas">
-                                <label for="Bombas"> Bombas Inyectoras</label>
+                                <label for="Bombas">Bombas Inyectoras</label>
                             </div>
                             <div class="filters__form--items">
                                 <input name="identificador" type="radio" value="Sensores" id="Sensores">
                                 <label for="Sensores"> Sensores</label>
                             </div>
-
                             <input class="filters__button" type="submit" value="Aplicar">
                         </form>
-
-                        <h1 style="padding: 0 25px">Mas filtros proximamente..</h1>
                     </aside>
                     
                     <section class="products">
@@ -93,11 +93,18 @@
         </section>    
     </main>
 
+    <!-- Toastify -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- Sweet Alert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <script src="./Products/products.js"></script>
     <script src="./Cart Modal/handleCart.js"></script>
     <script src="./Product List/renderProducts.js"></script>
     <script src="./Product Filters/filters.js"></script>
     <script src="./script.js"></script>
+
+    
 </body>
 
 </html>

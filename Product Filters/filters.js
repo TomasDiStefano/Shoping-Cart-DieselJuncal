@@ -31,3 +31,28 @@ filterFormText.addEventListener('submit', (event) => {
 });
 
 // filtrar por categorias
+
+const formCategory = document.querySelector('.filters__form');
+
+formCategory.addEventListener("submit", function(event) {
+    event.preventDefault(); // Evita que el formulario se envíe
+
+    let selectedOption = document.querySelector('input[name="identificador"]:checked');
+
+    switch(selectedOption.value) {
+        case 'Inyectores': 
+            filterByInput('inyector');
+            break;
+
+        case 'Bombas': 
+            filterByInput('bomba');
+            break;
+
+        case 'Sensores': 
+            filterByInput('sensor');
+            break;
+        default: 
+            console.log('Entro a default')
+    }
+    
+  });
