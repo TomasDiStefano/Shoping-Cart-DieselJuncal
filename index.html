@@ -52,7 +52,7 @@
         </div>
 
         <section class="content">
-            <form class="form" id="filterForm" action="">
+            <form class="form" id="filterFormText" action="">
                 <input class="form__placeholder" placeholder="Filtrar por tipo o numeración" type="text" name="" id="filterByNameInput">
                 <button class="form__button" id="submitBuscar" type="submit">Buscar</button>
             </form>
@@ -64,21 +64,21 @@
                 <div class="grid-container">
                     <aside class="filters__container"> 
                         <form class="filters__form" action="">
+                            <h2 class="filters__form--title"> Categorías: </h2>
                             <div class="filters__form--items">
                                 <input name="identificador" type="radio" value="Inyectores" id="Inyectores">
                                 <label for="Inyectores"> Inyectores</label>
                             </div>
                             <div class="filters__form--items">
                                 <input name="identificador" type="radio" value="Bombas" id="Bombas">
-                                <label for="Bombas"> Bombas</label>
+                                <label for="Bombas"> Bombas Inyectoras</label>
                             </div>
                             <div class="filters__form--items">
                                 <input name="identificador" type="radio" value="Sensores" id="Sensores">
                                 <label for="Sensores"> Sensores</label>
                             </div>
-                            <div class="filters__button--container">
-                                <button class="filters__button">Buscar</button>
-                            </div>
+
+                            <input class="filters__button" type="submit" value="Aplicar">
                         </form>
 
                         <h1 style="padding: 0 25px">Mas filtros proximamente..</h1>
@@ -93,7 +93,10 @@
         </section>    
     </main>
 
-    <script src="./products.js"></script>
+    <script src="./Products/products.js"></script>
+    <script src="./Cart Modal/handleCart.js"></script>
+    <script src="./Product List/renderProducts.js"></script>
+    <script src="./Product Filters/filters.js"></script>
     <script src="./script.js"></script>
 </body>
 

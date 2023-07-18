@@ -151,12 +151,20 @@ body {
 .filters__form {
   padding: 25px;
 }
+.filters__form--title {
+  text-decoration: underline;
+  padding-bottom: 10px;
+}
 .filters__form--items {
   padding: 2.5px;
   font-weight: 200;
   font-size: 20px;
 }
 .filters__button {
+  padding: 10px;
+  display: flex;
+  justify-content: left;
+  margin-top: 15px;
   background-color: red; /* Green */
   border-radius: 8px;
   border: 1.5px solid black;
@@ -167,11 +175,6 @@ body {
   font-size: 15px;
   font-weight: 750;
   transition: color 0.5s;
-}
-.filters__button--container {
-  padding: 10px;
-  display: flex;
-  justify-content: center;
 }
 .filters__button:hover {
   cursor: pointer;
@@ -296,8 +299,6 @@ body {
   }
 }
 .form__placeholder {
-  font-size: 20px;
-  font-family: 'roboto', sans-serif;
   border: 1px solid white;
   border-radius: 8px;
   height: auto;
