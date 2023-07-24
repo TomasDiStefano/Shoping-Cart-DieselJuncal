@@ -1,0 +1,19 @@
+{
+  "name": "e-commerce-diesel-juncal",
+  "version": "1.0.0",
+  "description": "Project created for Javascript Course by CoderHouse",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomasDiStefano/Shoping-Cart-DieselJuncal.git"
+  },
+  "author": "tDistefano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TomasDiStefano/Shoping-Cart-DieselJuncal/issues"
+  },
+  "homepage": "https://github.com/TomasDiStefano/Shoping-Cart-DieselJuncal#readme"
+}
