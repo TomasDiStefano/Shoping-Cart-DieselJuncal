@@ -1,4 +1,5 @@
 let filteredProducts = [];
+let products = [];
 
 // Get the form and input element
 const filterFormText = document.getElementById('filterFormText');
@@ -7,6 +8,7 @@ const formInput = document.getElementById('filterByNameInput');
 // Function to filter array by Input
 function filterByInput(value) {
     value = (value.toLowerCase()).replace(/ /g,''); // Quito los espacios en blanco y las mayusculas
+    console.log('FILTRO PRODUCTS', products);
     filteredProducts = products.filter(function( item ) {
         let typeConditionClean = ((item.type).toLowerCase()).replace(/ /g,'') //without spaces and upper
         let specificationConditionClean = ((item.specification).toLowerCase()).replace(/ /g,'') //without spaces and upper
@@ -17,7 +19,7 @@ function filterByInput(value) {
             return item
         };
     });
-    renderProducts(filteredProducts);
+    renderFilteredProducts(filteredProducts);
 }
 
 filterFormText.addEventListener('submit', (event) => {

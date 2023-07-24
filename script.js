@@ -1,3 +1,2 @@
-
-renderProducts(products);
+renderProducts();
 updateCart();
