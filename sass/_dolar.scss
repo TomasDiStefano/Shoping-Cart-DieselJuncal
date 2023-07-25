@@ -1,0 +1,26 @@
+@import 'mixins';
+
+.dolar{
+    &-container {
+        border-top: 1px solid white;
+        padding: 25px;
+        text-align: center;
+    }
+
+    &-button {
+        @include button-template;
+    }
+    
+    &-price{
+        margin-top: 10px;
+        border-radius: 10px;
+        border: 1px solid black;
+        color: black;
+        background-color: rgb(226, 157, 157);
+    }
+}
+
+.hide-button{
+    display: none;
+}
+

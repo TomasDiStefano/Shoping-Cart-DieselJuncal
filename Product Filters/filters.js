@@ -57,4 +57,25 @@ formCategory.addEventListener("submit", function(event) {
             console.log('Entro a default')
     }
     
-  });
+});
+
+const dolarPrice = document.getElementById('dolar-price');
+const priceButton = document.querySelector('.dolar-button');
+
+async function showDolarPrice() {
+    try{
+        let res = await fetch('https://criptoya.com/api/dolar');
+        const data = await res.json();
+        priceButton.classList.toggle('hidden-cart');
+        for (const dollar in data) {
+            dolarPrice.innerHTML += `
+            <div class="dolar-price">
+                <h3> ${dollar}</h3>
+                <p>$ ${data[dollar]}</p>
+            </div>`;
+        }
+    }catch(err){
+        console.log(err)
+    }
+}
+

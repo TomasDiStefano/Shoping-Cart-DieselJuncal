@@ -461,4 +461,37 @@ body {
   display: none;
 }
 
+.dolar-container {
+  border-top: 1px solid white;
+  padding: 25px;
+  text-align: center;
+}
+.dolar-button {
+  background-color: red; /* Green */
+  border-radius: 8px;
+  border: 1.5px solid black;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  font-family: "kulim-park", sans-serif;
+  font-size: 15px;
+  font-weight: 750;
+  transition: color 0.5s;
+}
+.dolar-button:hover {
+  cursor: pointer;
+  color: black;
+}
+.dolar-price {
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+  color: black;
+  background-color: rgb(226, 157, 157);
+}
+
+.hide-button {
+  display: none;
+}
+
 /*# sourceMappingURL=styles.css.map */
